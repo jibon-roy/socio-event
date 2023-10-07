@@ -22,8 +22,6 @@ const Navbar = () => {
                     </div>
 
                     <img src={Logo} className='btn btn-ghost' alt="" />
-
-
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
