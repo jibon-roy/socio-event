@@ -12,7 +12,7 @@ const Pricing = () => {
                             <div className="w-20 mt-1 ml-[45%] md:mr-[40%]  2xl:mr-[40%] lg:ml-[44%] xl:ml-[45%] h-1 bg-primary-dark mx-auto"></div>
                         </div>
                     </div>
-                    <div className="flex -m-4 justify-center">
+                    <div className="md:flex -m-4 justify-center">
                         <div className="p-4 xl:w-1/4 md:w-1/2 w-full" data-aos='fade-down'>
                             <div className="h-[430px] p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
                                 <h2 className="text-sm tracking-widest title-font mb-1 font-medium">START</h2>

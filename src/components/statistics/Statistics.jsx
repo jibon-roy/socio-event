@@ -12,7 +12,7 @@ const Statistics = () => {
                 <section className="body-font text-primary-white">
                     <div className="container px-5 py-10 mx-auto">
                         <div className="flex flex-wrap mx-auto gap-2 text-center">
-                            <div className="py-4 md:w-[24%] rounded-lg sm:md:w-[50%] w-1/2 border border-primary-white">
+                            <div className="py-4 mx-auto md:w-[24%] rounded-lg sm:md:w-[50%] w-1/2 border border-primary-white">
                                 <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
                                     <CountUp start={1000} enableScrollSpy={true} end={2703} delay={0}>
                                         {({ countUpRef }) => (
@@ -24,7 +24,7 @@ const Statistics = () => {
                                 </h2>
                                 <p className="leading-relaxed text-3xl">Users</p>
                             </div>
-                            <div className="py-4 md:w-[24%] rounded-lg sm:md:w-[50%] w-1/2 border border-primary-white">
+                            <div className="py-4 mx-auto md:w-[24%] rounded-lg sm:md:w-[50%] w-1/2 border border-primary-white">
                                 <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
                                     <CountUp start={1000} enableScrollSpy={true} end={1810} delay={0}>
                                         {({ countUpRef }) => (
@@ -36,7 +36,7 @@ const Statistics = () => {
                                 </h2>
                                 <p className="leading-relaxed text-3xl">Subscribes</p>
                             </div>
-                            <div className="py-4 md:w-[24%] rounded-lg sm:md:w-[50%] w-1/2 border border-primary-white">
+                            <div className="py-4 mx-auto md:w-[24%] rounded-lg sm:md:w-[50%] w-1/2 border border-primary-white">
                                 <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
                                     <CountUp start={100} enableScrollSpy={true} end={800} delay={0}>
                                         {({ countUpRef }) => (
@@ -48,7 +48,7 @@ const Statistics = () => {
                                 </h2>
                                 <p className="leading-relaxed text-3xl">Manage Events</p>
                             </div>
-                            <div className="py-4 md:w-[24%] rounded-lg sm:md:w-[50%] w-1/2 border border-primary-white">
+                            <div className="py-4 mx-auto md:w-[24%] rounded-lg sm:md:w-[50%] w-1/2 border border-primary-white">
                                 <h2 className="title-font font-medium sm:text-4xl text-3xl text-gray-900">
                                     <CountUp start={0} enableScrollSpy={true} end={70} delay={0}>
                                         {({ countUpRef }) => (

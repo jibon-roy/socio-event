@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 
 const ServiceDetails = () => {
@@ -17,6 +17,9 @@ const ServiceDetails = () => {
                         serviceItem?.title
                     }</p>
                     <p className="text-justify">{serviceItem.post}</p>
+                    <div className="text-center py-10">
+                        <Link to='/'><div className="btn btn-secondary">Back to Home</div></Link>
+                    </div>
                 </div>
             </div>
         </div>
