@@ -4,6 +4,9 @@ import Home from "../layouts/home/Home";
 import Root from "../layouts/root/Root";
 import Services from "../components/services/Services";
 import ServiceDetails from "../layouts/serviceDetails/ServiceDetails";
+import Register from "../layouts/register/Register";
+import Login from "../layouts/login/Login";
+import About from "../layouts/about/About";
 
 const router = createBrowserRouter([
     {
@@ -26,9 +29,17 @@ const router = createBrowserRouter([
                 element: <ServiceDetails></ServiceDetails>
             },
             {
-                path: "/",
-                element: <Home></Home>
+                path: "/register",
+                element: <Register></Register>
             },
+            {
+                path: "/login",
+                element: <Login></Login>
+            },
+            {
+                path: "/about",
+                element: <About></About>
+            }
         ]
     },
 ])

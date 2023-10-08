@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../assets/logo.png'
 
 const Navbar = () => {
@@ -6,6 +6,8 @@ const Navbar = () => {
     const navLinks = <div className='font-bold grid gap-1 lg:gap-4 lg:flex'>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/services'>Services</NavLink></li>
+        <li><NavLink to='/register'>Register</NavLink></li>
+        <li><NavLink to='/about'>About</NavLink></li>
     </div>
 
     return (
@@ -20,7 +22,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end ">
-                    <a className="btn btn-secondary max-lg:hidden normal-case font-bold">Log in</a>
+                    <Link to='/login' className="btn btn-secondary max-lg:hidden normal-case font-bold">Log in</Link>
                     <div className="dropdown">
                         <div className="drawer lg:hidden z-50">
                             <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -34,7 +36,7 @@ const Navbar = () => {
                                 <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
                                 <ul className="menu p-4 w-[70%] md:w-80 min-h-full bg-base-200 text-base-content">
                                     {navLinks}
-                                    <a className="btn btn-secondary normal-case font-bold">Log in</a>
+                                    <Link to='/login' className="btn btn-secondary normal-case font-bold">Log in</Link>
                                 </ul>
                             </div>
                         </div>
