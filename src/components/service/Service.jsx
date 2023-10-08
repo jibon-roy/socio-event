@@ -5,7 +5,7 @@ const Service = ({ service }) => {
     return (
 
         <div className="p-4">
-            <div className="h-full border-2 hover:border-primary-pink border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+            <div data-aos='fade-up' className="h-full border-2 hover:border-primary-pink border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
                 <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={service?.cover_image} alt="blog" />
                 <div className="p-6">
                     <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">SOCIO EVENTS</h2>

@@ -1,5 +1,7 @@
 import Slider from "../../components/slider/Slider";
 import Services from "../../components/services/Services";
+import Statistics from "../../components/statistics/Statistics";
+import Pricing from "../../components/pricing/Pricing";
 
 const Home = () => {
 
@@ -13,8 +15,16 @@ const Home = () => {
                 <Slider></Slider>
             </section>
             {/* Services Section */}
-            <section>
+            <section data-aos='fade-up'>
                 <Services></Services>
+            </section>
+            {/* Statistics Sections */}
+            <section>
+                <Statistics></Statistics>
+            </section>
+            {/* Pricing Sections */}
+            <section>
+                <Pricing></Pricing>
             </section>
         </div>
     );
