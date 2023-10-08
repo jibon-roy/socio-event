@@ -7,7 +7,7 @@ const Pricing = () => {
                 <div className="container px-5 py-10 mx-auto">
                     <div className="flex flex-col text-center w-full mb-20">
                         <div className="text-5xl text-center" data-aos='fade-up'>
-                            <span className="text-primary-dark">SOCIO </span><span className="text-primary-pink">EVENT&#39;S </span><span className="font-semibold">Pricing</span>
+                            <span className="text-primary-dark">SOCIO </span><span className="text-primary-pink">EVENT&#39;S </span><span className="font-semibold">Packages</span>
                             <div className="w-20 mt-3 mr-[45%] md:mr-[40%]  2xl:ml-[48%] lg:mr-[44%] xl:mr-[45%] h-1 bg-primary-dark mx-auto"></div>
                             <div className="w-20 mt-1 ml-[45%] md:mr-[40%]  2xl:mr-[40%] lg:ml-[44%] xl:ml-[45%] h-1 bg-primary-dark mx-auto"></div>
                         </div>
@@ -45,7 +45,7 @@ const Pricing = () => {
                                         </svg>
                                     </span>Personalized support via email and chat.
                                 </p>
-                                <button className="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 btn btn-neutral rounded">Book Us Now
+                                <button className="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 btn btn-neutral rounded">Add to cart
                                     <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-auto" viewBox="0 0 24 24">
                                         <path d="M5 12h14M12 5l7 7-7 7"></path>
                                     </svg>
@@ -89,7 +89,7 @@ const Pricing = () => {
                                     </span>Upgrade for larger audiences.
                                 </p>
                                 <p className="text-center text-2xl text-primary-pink">Recommended</p>
-                                <button className="flex items-center mt-auto text-white bg-purple-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-purple-600 rounded btn btn-secondary">Book Us Now
+                                <button className="flex items-center mt-auto text-white bg-purple-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-purple-600 rounded btn btn-secondary">Add to cart
                                     <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-auto" viewBox="0 0 24 24">
                                         <path d="M5 12h14M12 5l7 7-7 7"></path>
                                     </svg>
@@ -176,7 +176,7 @@ const Pricing = () => {
                                 </span>Upgrade for larger audiences.
                             </p>
                             <p className="text-center text-2xl text-primary-pink">Recommended</p>
-                            <button className="flex items-center mt-auto text-white bg-purple-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-purple-600 rounded btn btn-secondary">Book Us Now
+                            <button className="flex items-center mt-auto text-white bg-purple-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-purple-600 rounded btn btn-secondary">Add to cart
                                 <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-auto" viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                                 </svg>

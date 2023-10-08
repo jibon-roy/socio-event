@@ -1,7 +1,9 @@
 import { PropTypes } from "prop-types";
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { auth } from "../firebase/auth";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -24,18 +26,83 @@ const AuthProvider = ({ children }) => {
                     updateProfile(result.user, {
                         displayName: name
                     })
+                    toast.success('Register successful', {
+                        position: "top-right",
+                        autoClose: 3000
+                    })
                 }
-                console.log(result);
+
             })
-            .catch();
+            .catch(err => {
+                if (err.message === 'Firebase: Error (auth/email-already-in-use).') {
+                    toast.error('Email already exists', {
+                        position: "top-right",
+                        autoClose: 3000
+                    })
+                } else {
+                    toast.error('Register not successful', {
+                        position: "top-right",
+                        autoClose: 3000
+                    })
+                }
+            }
+
+            )
     }
     const gmailUser = () => {
         setLoading(true);
-        return signInWithPopup(auth, googleProvider);
+        return signInWithPopup(auth, googleProvider)
+            .then(result => {
+                if (result)
+                    toast.success('Log in Successful', {
+                        position: "top-right",
+                        autoClose: 3000
+                    })
+            })
+            .catch(toast.error('Log in unsuccessful', {
+                position: "top-right",
+                autoClose: 3000
+            })
+            )
     }
     const gitUser = () => {
         setLoading(true);
-        return signInWithPopup(auth, gitProvider);
+        return signInWithPopup(auth, gitProvider)
+            .then(toast.success('Log in Successful', {
+                position: "top-right",
+                autoClose: 3000
+            }))
+            .catch(toast.error('Log in unsuccessful', {
+                position: "top-right",
+                autoClose: 3000
+            })
+            )
+    }
+
+    const logInUser = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password)
+            .then(result => {
+                if (result.user)
+                    toast.success('Log in Successful', {
+                        position: "top-right",
+                        autoClose: 3000
+                    })
+            })
+            .catch(err => {
+                console.log(err.message);
+                if (err.message === 'Firebase: Error (auth/missing-email).') {
+                    toast.error('Email not found', {
+                        position: "top-right",
+                        autoClose: 3000
+                    })
+                } else if (err.message === 'Firebase: Error (auth/invalid-login-credentials).') {
+                    toast.error('Email or Password doesn\'t matched', {
+                        position: "top-right",
+                        autoClose: 3000
+                    })
+                }
+
+            })
     }
 
     useEffect(() => {
@@ -48,11 +115,14 @@ const AuthProvider = ({ children }) => {
 
     const logOut = () => {
         signOut(auth)
-            .then()
-            .catch()
+            .then(toast.success('Log out Successful', {
+                position: "top-right",
+                autoClose: 3000
+            }))
+
     }
 
-    const data = { emailPasswordUser, gmailUser, gitUser, user, loading, logOut }
+    const data = { emailPasswordUser, gmailUser, gitUser, logInUser, user, loading, logOut }
 
     return (
         <AuthContext.Provider value={data}>

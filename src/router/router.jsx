@@ -7,6 +7,8 @@ import ServiceDetails from "../layouts/serviceDetails/ServiceDetails";
 import Register from "../layouts/register/Register";
 import Login from "../layouts/login/Login";
 import About from "../layouts/about/About";
+import PrivetLayout from "../layouts/privetlayout/PrivetLayout";
+import PublicLayout from "../layouts/PublicLayout/PublicLayout";
 
 const router = createBrowserRouter([
     {
@@ -26,15 +28,15 @@ const router = createBrowserRouter([
             {
                 path: "/service/:id",
                 loader: () => fetch('/services.json'),
-                element: <ServiceDetails></ServiceDetails>
+                element: <PrivetLayout><ServiceDetails></ServiceDetails></PrivetLayout>
             },
             {
                 path: "/register",
-                element: <Register></Register>
+                element: <PublicLayout><Register></Register></PublicLayout>
             },
             {
                 path: "/login",
-                element: <Login></Login>
+                element: <PublicLayout><Login></Login></PublicLayout>
             },
             {
                 path: "/about",
