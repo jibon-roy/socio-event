@@ -21,7 +21,7 @@ const Services = () => {
                     <div className="w-20 mt-3 mr-[45%] md:mr-[40%] lg:mr-[45%] h-1 bg-primary-dark mx-auto"></div>
                     <div className="w-20 mt-1 ml-[45%] md:mr-[40%] lg:ml-[45%] h-1 bg-primary-dark mx-auto"></div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 mx-auto">
+                <div className="grid grid-cols-1 my-20 md:grid-cols-2 lg:grid-cols-3 mx-auto">
                     {services.map(service => <Service key={service.id} service={service}></Service>)}
                 </div>
             </div>
