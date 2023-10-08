@@ -2,12 +2,8 @@ import Slider from "../../components/slider/Slider";
 import Services from "../../components/services/Services";
 import Statistics from "../../components/statistics/Statistics";
 import Pricing from "../../components/pricing/Pricing";
-import Footer from "../../components/footer/Footer";
 
 const Home = () => {
-
-
-
 
     return (
         <div>
@@ -26,10 +22,6 @@ const Home = () => {
             {/* Pricing Sections */}
             <section>
                 <Pricing></Pricing>
-            </section>
-            {/* Footer Section */}
-            <section>
-                <Footer></Footer>
             </section>
         </div>
     );

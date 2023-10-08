@@ -1,7 +1,11 @@
 import { PropTypes } from "prop-types";
+import { Link } from "react-router-dom";
 
 
 const Service = ({ service }) => {
+
+    const { id } = service;
+
     return (
 
         <div className="p-4">
@@ -12,12 +16,12 @@ const Service = ({ service }) => {
                     <h1 className="title-font text-lg font-medium text-gray-900 mb-3">{service?.title}</h1>
                     <p className="leading-relaxed mb-10">{service?.description.length > 50 && service?.description.slice(0, 100) + '...'}</p>
                     <div className="flex items-center justify-between flex-wrap ">
-                        <a className="btn btn-secondary inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                        <Link to={`/service/${id}`} className="btn btn-secondary inline-flex items-center md:mb-2 lg:mb-0">Learn More
                             <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M5 12h14"></path>
                                 <path d="M12 5l7 7-7 7"></path>
                             </svg>
-                        </a>
+                        </Link>
                         <span className="max-sm:space-y-5">
                             <span className="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                                 <svg className="w-4 h-4 mr-1" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">

@@ -1,17 +1,19 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Service from "../service/Service";
-
-
+import { useLoaderData } from "react-router-dom";
 
 const Services = () => {
-    const [services, setServices] = useState([]);
 
-    useEffect(() => {
-        fetch('/services.json')
-            .then(result => result.json())
-            .then(data => setServices(data))
-            .catch(err => console.log(err))
-    }, [])
+    const services = useLoaderData();
+
+    // const [services, setServices] = useState([]);
+
+    // useEffect(() => {
+    //     fetch('/services.json')
+    //         .then(result => result.json())
+    //         .then(data => setServices(data))
+    //         .catch(err => console.log(err))
+    // }, [])
 
     return (
         <>
