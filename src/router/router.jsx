@@ -6,16 +6,18 @@ import Services from "../components/services/Services";
 import ServiceDetails from "../layouts/serviceDetails/ServiceDetails";
 import Register from "../layouts/register/Register";
 import Login from "../layouts/login/Login";
-import About from "../layouts/about/About";
+import Contact from "../layouts/contact/Contact";
 import PrivetLayout from "../layouts/privetlayout/PrivetLayout";
 import PublicLayout from "../layouts/PublicLayout/PublicLayout";
 import Profile from "../layouts/Profile/Profile";
 import Settings from "../layouts/settings/Settings";
+import ErrorPage from "../layouts/errorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
@@ -49,8 +51,8 @@ const router = createBrowserRouter([
                 element: <PrivetLayout><Settings></Settings></PrivetLayout>
             },
             {
-                path: "/about",
-                element: <About></About>
+                path: "/contact",
+                element: <Contact></Contact>
             }
         ]
     },

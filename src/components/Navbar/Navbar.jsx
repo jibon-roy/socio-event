@@ -20,7 +20,7 @@ const Navbar = () => {
             : <li><NavLink to='/register'>Register</NavLink></li>
         }
 
-        <li><NavLink to='/about'>About</NavLink></li>
+        <li><NavLink to='/contact'>Contact</NavLink></li>
     </div>
 
     return (
@@ -64,7 +64,7 @@ const Navbar = () => {
                             <input id="my-drawer" type="checkbox" className="drawer-toggle" />
                             <div className="drawer-content">
                                 {/* Page content here */}
-                                <label htmlFor="my-drawer" className="btn btn-secondary drawer-button">
+                                <label htmlFor="my-drawer" className="btn btn-ghost drawer-button">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                                 </label>
                             </div>
