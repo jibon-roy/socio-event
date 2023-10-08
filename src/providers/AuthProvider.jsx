@@ -59,10 +59,14 @@ const AuthProvider = ({ children }) => {
                         autoClose: 3000
                     })
             })
-            .catch(toast.error('Log in unsuccessful', {
-                position: "top-right",
-                autoClose: 3000
-            })
+            .catch(err => {
+                if (err) {
+                    toast.error('Log in unsuccessful', {
+                        position: "top-right",
+                        autoClose: 3000
+                    })
+                }
+            }
             )
     }
     const gitUser = () => {
@@ -72,10 +76,14 @@ const AuthProvider = ({ children }) => {
                 position: "top-right",
                 autoClose: 3000
             }))
-            .catch(toast.error('Log in unsuccessful', {
-                position: "top-right",
-                autoClose: 3000
-            })
+            .catch(err => {
+                if (err) {
+                    toast.error('Log in unsuccessful', {
+                        position: "top-right",
+                        autoClose: 3000
+                    })
+                }
+            }
             )
     }
 
@@ -89,7 +97,6 @@ const AuthProvider = ({ children }) => {
                     })
             })
             .catch(err => {
-                console.log(err.message);
                 if (err.message === 'Firebase: Error (auth/missing-email).') {
                     toast.error('Email not found', {
                         position: "top-right",
@@ -119,10 +126,20 @@ const AuthProvider = ({ children }) => {
                 position: "top-right",
                 autoClose: 3000
             }))
-
     }
 
-    const data = { emailPasswordUser, gmailUser, gitUser, logInUser, user, loading, logOut }
+    const updateUserProfileName = (activeUser, name) => {
+        updateProfile(activeUser, {
+            displayName: name
+        })
+    }
+    const updateUserProfilePhoto = (activeUser, photoUrl) => {
+        updateProfile(activeUser, {
+            photoURL: photoUrl
+        })
+    }
+
+    const data = { emailPasswordUser, gmailUser, gitUser, logInUser, user, loading, logOut, updateUserProfileName, updateUserProfilePhoto }
 
     return (
         <AuthContext.Provider value={data}>

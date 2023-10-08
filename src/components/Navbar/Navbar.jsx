@@ -12,8 +12,12 @@ const Navbar = () => {
     const navLinks = <div className='font-bold grid gap-1 lg:gap-4 lg:flex'>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/services'>Services</NavLink></li>
-        {!user &&
-            <li><NavLink to='/register'>Register</NavLink></li>
+        {user ?
+            <>
+                <li><NavLink to='/profile'>Profile</NavLink></li>
+                <li><NavLink to='/settings'>Settings</NavLink></li>
+            </>
+            : <li><NavLink to='/register'>Register</NavLink></li>
         }
 
         <li><NavLink to='/about'>About</NavLink></li>

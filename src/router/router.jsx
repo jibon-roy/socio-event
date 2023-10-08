@@ -9,6 +9,8 @@ import Login from "../layouts/login/Login";
 import About from "../layouts/about/About";
 import PrivetLayout from "../layouts/privetlayout/PrivetLayout";
 import PublicLayout from "../layouts/PublicLayout/PublicLayout";
+import Profile from "../layouts/Profile/Profile";
+import Settings from "../layouts/settings/Settings";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +39,14 @@ const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <PublicLayout><Login></Login></PublicLayout>
+            },
+            {
+                path: "/profile",
+                element: <PrivetLayout><Profile></Profile></PrivetLayout>
+            },
+            {
+                path: "/settings",
+                element: <PrivetLayout><Settings></Settings></PrivetLayout>
             },
             {
                 path: "/about",
