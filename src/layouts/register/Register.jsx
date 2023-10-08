@@ -2,8 +2,26 @@ import Logo from '../../assets/logo.png'
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
+// import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
+    const { emailPasswordUser, gmailUser, gitUser } = useContext(AuthContext);
+
+    const handelRegister = (e) => {
+        e.preventDefault();
+
+        const from = new FormData(e.currentTarget);
+        const name = from.get('name');
+        const email = from.get('email');
+        const password = from.get('password');
+
+        emailPasswordUser(name, email, password);
+
+    }
+
     return (
         <div>
             <div className="hero bg-primary-white">
@@ -15,24 +33,24 @@ const Register = () => {
                             <p className="py-6">We are always ready to give you a good service. We are committed to serving you.</p>
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                            <form className="card-body">
+                            <form onSubmit={handelRegister} className="card-body">
                                 <div className="form-control">
                                     <label htmlFor='name' className="label">
                                         <span className="label-text">Name</span>
                                     </label>
-                                    <input id='name' type="text" placeholder="Full name" className="input input-bordered" required />
+                                    <input id='name' name='name' type="text" placeholder="Full name" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label htmlFor='email' className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input id='email' type="email" placeholder="Email" className="input input-bordered" required />
+                                    <input id='email' name='email' type="email" placeholder="Email" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label htmlFor='password' className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input id='password' type="password" placeholder="Password" className="input input-bordered" required />
+                                    <input id='password' name='password' type="password" placeholder="Password" className="input input-bordered" required />
                                     <label className="label">
                                         <div className="text-base">Already have an account? <Link className='link link-hover font-bold' to='/login'>Log in.</Link> </div>
                                     </label>
@@ -44,9 +62,8 @@ const Register = () => {
                                 <div className='text-center'>
                                     <span className='text-center'>Continue with -</span>
                                     <div className='flex text-5xl justify-center mt-4 gap-5 mx-auto'>
-                                        <FcGoogle className='rounded-full p-1 hover:bg-neutral-200 cursor-pointer'></FcGoogle> <FaGithub className='rounded-full p-1 hover:bg-neutral-200 cursor-pointer'></FaGithub>
+                                        <FcGoogle onClick={gmailUser} className='rounded-full p-1 hover:bg-neutral-200 cursor-pointer'></FcGoogle> <FaGithub onClick={gitUser} className='rounded-full p-1 hover:bg-neutral-200 cursor-pointer'></FaGithub>
                                     </div>
-
                                 </div>
                             </form>
                         </div>
