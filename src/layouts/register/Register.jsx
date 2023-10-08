@@ -2,12 +2,13 @@ import Logo from '../../assets/logo.png'
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 // import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
+    const [passErr, setPassErr] = useState('');
     const { emailPasswordUser, gmailUser, gitUser } = useContext(AuthContext);
 
     const handelRegister = (e) => {
@@ -17,7 +18,20 @@ const Register = () => {
         const name = from.get('name');
         const email = from.get('email');
         const password = from.get('password');
-
+        if (password.length < 6) {
+            setPassErr('Password is less then 6 characters.');
+            return;
+        }
+        if (!/[A-Z]/.test(password)) {
+            setPassErr('Password don\'t have a capital letter.')
+            console.log(/[A-Z]/);
+            return;
+        }
+        if (!/[@#$%^&+=]/.test(password)) {
+            setPassErr('Password don\'t have a special character. ')
+            return;
+        }
+        setPassErr('');
         emailPasswordUser(name, email, password);
 
     }
@@ -51,6 +65,9 @@ const Register = () => {
                                         <span className="label-text">Password</span>
                                     </label>
                                     <input id='password' name='password' type="password" placeholder="Password" className="input input-bordered" required />
+                                    <label className="label">
+                                        <div className="text-base text-[red]">{passErr}</div>
+                                    </label>
                                     <label className="label">
                                         <div className="text-base">Already have an account? <Link className='link link-hover font-bold' to='/login'>Log in.</Link> </div>
                                     </label>
