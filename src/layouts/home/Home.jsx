@@ -1,5 +1,5 @@
-import Navbar from "../../components/Navbar/Navbar";
 import Slider from "../../components/slider/Slider";
+import Services from "../../components/services/Services";
 
 const Home = () => {
 
@@ -8,11 +8,13 @@ const Home = () => {
 
     return (
         <div>
-            <section>
-                <Navbar></Navbar>
-            </section>
+            {/* Header Sections */}
             <section>
                 <Slider></Slider>
+            </section>
+            {/* Services Section */}
+            <section>
+                <Services></Services>
             </section>
         </div>
     );
