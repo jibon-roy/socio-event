@@ -1,4 +1,5 @@
 import CountUp from "react-countup";
+import { Link } from "react-router-dom";
 
 const Statistics = () => {
     return (
@@ -63,7 +64,7 @@ const Statistics = () => {
                         </div>
                     </div>
                     <div className="py-10 block text-center">
-                        <button className="btn btn-secondary">Get Started With Us</button>
+                        <Link to='/services'><button className="btn btn-secondary">Get Started With Us</button></Link>
                     </div>
 
                 </section>

@@ -7,7 +7,7 @@ import retirement from '../../assets/slides/retirement.jpg'
 import baby from '../../assets/slides/baby.jpg'
 import logo from '../../assets/logo.png'
 import { TypeAnimation } from 'react-type-animation'
-
+import { Link } from 'react-router-dom'
 
 
 export const Weddings = <div className="hero h-full" style={{ backgroundImage: `url(${weddings})` }}>
@@ -26,7 +26,7 @@ export const Weddings = <div className="hero h-full" style={{ backgroundImage: `
                 </TypeAnimation>
             </h1>
             <p className="mb-5 text-lg">Your dream wedding made reality. Our wedding planning expertise ensures a flawless day filled with love and treasured memories.</p>
-            <button className="btn btn-secondary">Get Started</button>
+            <Link to='/services'><button className="btn btn-secondary">Get Started</button></Link>
         </div>
     </div>
 </div>
@@ -46,7 +46,7 @@ export const Birthday = <div className="hero h-full" style={{ backgroundImage: `
                 </TypeAnimation>
             </h1>
             <p className="mb-5 text-lg">Make birthdays extraordinary. Our expert birthday party planning takes care of every detail, ensuring a day filled with joy and unforgettable memories.</p>
-            <button className="btn btn-secondary">Get Started</button>
+            <Link to='/services'><button className="btn btn-secondary">Get Started</button></Link>
         </div>
     </div>
 </div>
@@ -66,7 +66,7 @@ export const Anniversaries = <div className="hero h-full" style={{ backgroundIma
                 </TypeAnimation>
             </h1>
             <p className="mb-5 text-lg">Celebrate your love story effortlessly. Our anniversary event planning ensures a memorable day, allowing you to focus on each other. Trust us to create cherished moments.</p>
-            <button className="btn btn-secondary">Get Started</button>
+            <Link to='/services'><button className="btn btn-secondary">Get Started</button></Link>
         </div>
     </div>
 </div>
@@ -86,7 +86,7 @@ export const Engagement = <div className="hero h-full" style={{ backgroundImage:
                 </TypeAnimation>
             </h1>
             <p className="mb-5 text-lg">Begin your journey with perfection. Our engagement planning creates magical moments, allowing you to savor your love.</p>
-            <button className="btn btn-secondary">Get Started</button>
+            <Link to='/services'><button className="btn btn-secondary">Get Started</button></Link>
         </div>
     </div>
 </div>
@@ -106,7 +106,7 @@ export const Retirement = <div className="hero h-full my-4" style={{ backgroundI
                 </TypeAnimation>
             </h1>
             <p className="mb-5 text-lg">Embrace retirement worry-free. We plan retirement parties that reflect your achievements, ensuring a seamless transition to a new chapter in life.</p>
-            <button className="btn btn-secondary">Get Started</button>
+            <Link to='/services'><button className="btn btn-secondary">Get Started</button></Link>
         </div>
     </div>
 </div>
@@ -126,7 +126,7 @@ export const Baby = <div className="hero h-full" style={{ backgroundImage: `url(
                 </TypeAnimation>
             </h1>
             <p className="mb-5 text-lg">Welcome new life with ease. Our baby shower management guarantees a delightful celebration, leaving you stress-free to enjoy this special time.</p>
-            <button className="btn btn-secondary">Get Started</button>
+            <Link to='/services'><button className="btn btn-secondary">Get Started</button></Link>
         </div>
     </div>
 </div>

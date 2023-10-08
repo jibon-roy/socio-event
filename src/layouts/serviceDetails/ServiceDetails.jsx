@@ -16,6 +16,9 @@ const ServiceDetails = () => {
                     <p className="text-xl font-bold my-6 text-center">{
                         serviceItem?.title
                     }</p>
+                    <p className="text-xl font-bold my-6 text-center">
+                        Pricing at: {serviceItem?.price}
+                    </p>
                     <p className="text-justify">{serviceItem.post}</p>
                     <div className="text-center py-10">
                         <Link to='/'><div className="btn btn-secondary">Back to Home</div></Link>
