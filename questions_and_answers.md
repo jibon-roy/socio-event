@@ -18,9 +18,9 @@ console.log(greetign);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: C
+#### Answer: A
 
-<i>C is correct because, an array called gratings is declared but no elements are placed in it.</i>
+<i>Answer is a because a variable declared named 'greeting' but after that there assigned a empty object named 'greetign' which is different then 'greeting'. So, the output will be an empty object {}</i>
 
 </p>
 </details>
