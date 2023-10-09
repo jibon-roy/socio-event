@@ -40,14 +40,16 @@ const AuthProvider = ({ children }) => {
                     toast.error('Email already exists', {
                         position: "top-right",
                         autoClose: 3000
-                    })
+                    });
+                    setLoading(false);
                 } else {
                     toast.error('Register not successful', {
                         position: "top-right",
                         autoClose: 3000
-                    })
+                    });
+                    setLoading(false);
                 }
-                setLoading(false);
+
             }
 
             )
@@ -68,8 +70,9 @@ const AuthProvider = ({ children }) => {
                     toast.error('Log in unsuccessful', {
                         position: "top-right",
                         autoClose: 3000
-                    })
+                    });
                     setLoading(false);
+
                 }
             }
 
@@ -91,9 +94,10 @@ const AuthProvider = ({ children }) => {
                     toast.error('Log in unsuccessful', {
                         position: "top-right",
                         autoClose: 3000
-                    })
+                    });
+                    setLoading(false);
                 }
-                setLoading(false);
+
             }
             )
     }
@@ -119,12 +123,14 @@ const AuthProvider = ({ children }) => {
                     toast.error('Email or Password doesn\'t match', {
                         position: "top-right",
                         autoClose: 3000
-                    })
+                    });
+                    setLoading(false);
                     setLoginErr('Email or password doesn\'t match.');
                 } else {
-                    setLoginErr('Log in failed.')
+                    setLoginErr('Log in failed.');
+
                 }
-                setLoading(false);
+
             })
     }
 
