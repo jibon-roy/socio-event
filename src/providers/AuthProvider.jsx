@@ -15,6 +15,7 @@ const AuthProvider = ({ children }) => {
     const gitProvider = new GithubAuthProvider();
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
+    const [loginErr, setLoginErr] = useState('')
 
 
 
@@ -102,11 +103,15 @@ const AuthProvider = ({ children }) => {
                         position: "top-right",
                         autoClose: 3000
                     })
+                    setLoginErr('Email not found');
                 } else if (err.message === 'Firebase: Error (auth/invalid-login-credentials).') {
-                    toast.error('Email or Password doesn\'t matched', {
+                    toast.error('Email or Password doesn\'t match', {
                         position: "top-right",
                         autoClose: 3000
                     })
+                    setLoginErr('Email or password doesn\'t match.');
+                } else {
+                    setLoginErr('Log in failed.')
                 }
 
             })
@@ -139,7 +144,7 @@ const AuthProvider = ({ children }) => {
         })
     }
 
-    const data = { emailPasswordUser, gmailUser, gitUser, logInUser, user, loading, logOut, updateUserProfileName, updateUserProfilePhoto }
+    const data = { emailPasswordUser, gmailUser, gitUser, logInUser, loginErr, user, loading, logOut, updateUserProfileName, updateUserProfilePhoto }
 
     return (
         <AuthContext.Provider value={data}>

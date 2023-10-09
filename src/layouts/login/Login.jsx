@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
-    const { logInUser, gmailUser, gitUser, } = useContext(AuthContext);
+    const { logInUser, loginErr, gmailUser, gitUser, } = useContext(AuthContext);
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -18,6 +18,7 @@ const Login = () => {
         const password = form.get('password');
         logInUser(email, password);
     }
+
 
     return (
         <div>
@@ -43,6 +44,9 @@ const Login = () => {
                                         <span className="label-text">Password</span>
                                     </label>
                                     <input id='password' name='password' type="password" placeholder="Password" className="input input-bordered" required />
+                                    <label className="label">
+                                        <div className="text-[red] ">{loginErr}</div>
+                                    </label>
                                     <label className="label">
                                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                     </label>
