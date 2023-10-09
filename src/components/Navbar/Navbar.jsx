@@ -39,8 +39,13 @@ const Navbar = () => {
                         <div className='flex justify-center items-center gap-4'>
                             {
                                 <div className="avatar">
-                                    <div className="w-9 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
-                                        <img src={avatar} className='w-9' />
+                                    <div className="w-9 rounded-full ring ring-primary-dark ring-offset-base-100 ring-offset-2">
+                                        {user ?
+                                            <Link to='/profile'>
+                                                <img src={user?.photoURL == null ? avatar : user?.photoURL} className='w-9' />
+                                            </Link> :
+                                            <img src={user?.photoURL == null ? avatar : user?.photoURL} className='w-9' />
+                                        }
                                     </div>
                                 </div>
                             }
@@ -52,7 +57,12 @@ const Navbar = () => {
                             {
                                 <div className="avatar">
                                     <div className="w-9 rounded-full ring ring-secondary ring-offset-base-100 ring-offset-2">
-                                        <img src={user?.photoURL == null ? avatar : user?.photoURL} className='w-9' />
+                                        {user ?
+                                            <Link to='/profile'>
+                                                <img src={user?.photoURL == null ? avatar : user?.photoURL} className='w-9' />
+                                            </Link> :
+                                            <img src={user?.photoURL == null ? avatar : user?.photoURL} className='w-9' />
+                                        }
                                     </div>
                                 </div>
                             }

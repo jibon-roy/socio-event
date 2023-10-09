@@ -1,8 +1,13 @@
-# React + Vite
+# Welcome to SOCIO EVENTS project.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# [Visit live site](https://socio-events.web.app/) from here
 
-Currently, two official plugins are available:
+## https://socio-events.web.app/ (Live link)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### SOCIO EVENTS project features
+
+- 1. This project is designed for social event management ‍service.
+- 2. Users can know about the services provided and can purchase them.
+- 3. Users can create and update profile data.
+- 4. Here are some private routes that users cannot access unless they are logged in.
+- 5. There's AOS and some cool animations.

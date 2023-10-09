@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
+
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
@@ -15,7 +16,7 @@ const AuthProvider = ({ children }) => {
     const gitProvider = new GithubAuthProvider();
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
-    const [loginErr, setLoginErr] = useState('')
+    const [loginErr, setLoginErr] = useState('');
 
 
 
@@ -46,6 +47,7 @@ const AuthProvider = ({ children }) => {
                         autoClose: 3000
                     })
                 }
+                setLoading(false);
             }
 
             )
@@ -59,6 +61,30 @@ const AuthProvider = ({ children }) => {
                         position: "top-right",
                         autoClose: 3000
                     })
+
+            })
+            .catch(err => {
+                if (err) {
+                    toast.error('Log in unsuccessful', {
+                        position: "top-right",
+                        autoClose: 3000
+                    })
+                    setLoading(false);
+                }
+            }
+
+            )
+    }
+    const gitUser = () => {
+        setLoading(true);
+        return signInWithPopup(auth, gitProvider)
+            .then(result => {
+                if (result)
+                    toast.success('Log in Successful', {
+                        position: "top-right",
+                        autoClose: 3000
+                    })
+
             })
             .catch(err => {
                 if (err) {
@@ -67,23 +93,7 @@ const AuthProvider = ({ children }) => {
                         autoClose: 3000
                     })
                 }
-            }
-            )
-    }
-    const gitUser = () => {
-        setLoading(true);
-        return signInWithPopup(auth, gitProvider)
-            .then(toast.success('Log in Successful', {
-                position: "top-right",
-                autoClose: 3000
-            }))
-            .catch(err => {
-                if (err) {
-                    toast.error('Log in unsuccessful', {
-                        position: "top-right",
-                        autoClose: 3000
-                    })
-                }
+                setLoading(false);
             }
             )
     }
@@ -96,6 +106,7 @@ const AuthProvider = ({ children }) => {
                         position: "top-right",
                         autoClose: 3000
                     })
+
             })
             .catch(err => {
                 if (err.message === 'Firebase: Error (auth/missing-email).') {
@@ -113,7 +124,7 @@ const AuthProvider = ({ children }) => {
                 } else {
                     setLoginErr('Log in failed.')
                 }
-
+                setLoading(false);
             })
     }
 

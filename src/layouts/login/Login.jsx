@@ -1,13 +1,15 @@
 import Logo from '../../assets/logo.png'
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const { logInUser, loginErr, gmailUser, gitUser, } = useContext(AuthContext);
 
@@ -16,7 +18,12 @@ const Login = () => {
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
-        logInUser(email, password);
+        logInUser(email, password)
+            .then(
+
+                navigate(location?.state ? location?.state : '/')
+
+            );
     }
 
 
