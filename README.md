@@ -6,6 +6,7 @@
 
 ### SOCIO EVENTS project features
 
+
 - This project is designed for social event management ‍service.
 - Users can know about the services provided and can purchase them.
 - Users can create and update profile data.
