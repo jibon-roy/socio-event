@@ -4,8 +4,7 @@
 
 ## https://socio-events.web.app/ (Live link)
 
-### SOCIO EVENTS project features
-
+### SOCIO EVENT features
 
 - This project is designed for social event management ‍service.
 - Users can know about the services provided and can purchase them.
